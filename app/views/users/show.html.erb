@@ -1,0 +1,69 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Username:</strong>
+  <%= @user.username %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Mother name:</strong>
+  <%= @user.mother_name %>
+</p>
+
+<p>
+  <strong>Father name:</strong>
+  <%= @user.father_name %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @user.dob %>
+</p>
+
+<p>
+  <strong>Aadhar no:</strong>
+  <%= @user.aadhar_no %>
+</p>
+
+<p>
+  <strong>Pan no:</strong>
+  <%= @user.pan_no %>
+</p>
+
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag( @user.photo, :size => "260x180", :crop => :fill) %>
+</p>
+
+<p>
+  <strong>Sign:</strong>
+  <%= image_tag( @user.sign, :size => "260x180", :crop => :fill) %>
+</p>
+
+<p>
+  <strong>Cos:</strong>
+  <%= @user.cos_id %>
+</p>
+
+<p>
+  <strong>Phno:</strong>
+  <%= @user.phno %>
+</p>
+
+<p>
+  <strong>Adress:</strong>
+  <%= @user.adress %>
+</p>
+
+<p>
+  <strong>Nationality:</strong>
+  <%= @user.nationality %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

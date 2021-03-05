@@ -1,0 +1,92 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :username %>
+    <%= form.text_field :username, id: :user_username %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password, id: :user_password %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
+  </div>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, id: :user_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mother_name %>
+    <%= form.text_field :mother_name, id: :user_mother_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :father_name %>
+    <%= form.text_field :father_name, id: :user_father_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dob %>
+    <%= form.date_select :dob, id: :user_dob %>
+  </div>
+
+  <div class="field">
+    <%= form.label :aadhar_no %>
+    <%= form.number_field :aadhar_no, id: :user_aadhar_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pan_no %>
+    <%= form.text_field :pan_no, id: :user_pan_no %>
+  </div>
+
+  <div class="field">
+    <%= form.label :photo %>
+    <%= form.file_field :photo, id: :user_photo %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sign %>
+    <%= form.file_field :sign, id: :user_sign %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cos_id %>
+    <%= form.number_field :cos_id, id: :user_cos_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :phno %>
+    <%= form.number_field :phno, id: :user_phno %>
+  </div>
+
+  <div class="field">
+    <%= form.label :adress %>
+    <%= form.text_field :adress, id: :user_adress %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nationality %>
+    <%= form.text_field :nationality, id: :user_nationality %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
