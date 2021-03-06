@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210305054013) do
+ActiveRecord::Schema.define(version: 20210305183119) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "account_id"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(version: 20210305054013) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "user_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.integer "sender_id"
+    t.integer "receiver_id"
+    t.integer "transaction_amount"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["receiver_id"], name: "index_transactions_on_receiver_id"
+    t.index ["sender_id"], name: "index_transactions_on_sender_id"
   end
 
   create_table "users", force: :cascade do |t|
