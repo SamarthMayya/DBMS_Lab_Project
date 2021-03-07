@@ -22,6 +22,9 @@ class RequestsController < ApplicationController
   # POST /requests or /requests.json
   def create
     @request = Request.new(request_params)
+    @request.requester_id = current_user.id
+    @request.sender_id = (User.find_by phno: request_params[:sender_phno]).id
+    @request.status = "pending"
 
     respond_to do |format|
       if @request.save

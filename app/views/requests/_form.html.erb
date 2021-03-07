@@ -11,15 +11,6 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :requester_id %>
-    <%= form.number_field :requester_id, id: :request_requester_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :sender_id %>
-    <%= form.number_field :sender_id, id: :request_sender_id %>
-  </div>
 
   <div class="field">
     <%= form.label :amount %>
@@ -32,12 +23,7 @@
   </div>
 
   <div class="field">
-    <%= form.label :status %>
-    <%= form.text_field :status, id: :request_status %>
-  </div>
-
-  <div class="field">
-    <%= form.label :sender_phno %>
+    <%= form.label :his_phno %>
     <%= form.number_field :sender_phno, id: :request_sender_phno %>
   </div>
 
