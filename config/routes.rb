@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :requests
   resources :accounts
   resources :users
   root 'homepage#home'

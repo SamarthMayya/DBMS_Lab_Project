@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Requester:</strong>
+  <%= @request.requester_id %>
+</p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @request.sender_id %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @request.amount %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @request.message %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @request.status %>
+</p>
+
+<p>
+  <strong>Sender phno:</strong>
+  <%= @request.sender_phno %>
+</p>
+
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Back', requests_path %>
