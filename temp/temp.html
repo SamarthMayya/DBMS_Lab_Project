@@ -1,0 +1,30 @@
+<table>
+  <thead>
+    <tr>
+      <th>Requester</th>
+      <th>Sender</th>
+      <th>Amount</th>
+      <th>Message</th>
+      <th>Status</th>
+      <th>Sender phno</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+    <% @requests.each do |request| %>
+      <tr>
+        <td><%= request.requester_id %></td>
+        <td><%= request.sender_id %></td>
+        <td><%= request.amount %></td>
+        <td><%= request.message %></td>
+        <td><%= request.status %></td>
+        <td><%= request.sender_phno %></td>
+        <td><%= link_to 'Show', request %></td>
+        <td><%= link_to 'Edit', edit_request_path(request) %></td>
+        <td><%= link_to 'Destroy', request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

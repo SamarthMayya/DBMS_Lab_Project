@@ -6,7 +6,7 @@ class RequestsController < ApplicationController
     if current_user.nil?
       redirect_to login_url
     end
-    @requests = Request.all
+    @pending_count = (Request.where(sender_id: current_user.id, status: "pending").or(Request.where(requester_id: current_user.id))).count
   end
 
   # GET /requests/1 or /requests/1.json
