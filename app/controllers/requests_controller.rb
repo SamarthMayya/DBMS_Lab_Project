@@ -3,6 +3,9 @@ class RequestsController < ApplicationController
 
   # GET /requests or /requests.json
   def index
+    if current_user.nil?
+      redirect_to login_url
+    end
     @requests = Request.all
   end
 
