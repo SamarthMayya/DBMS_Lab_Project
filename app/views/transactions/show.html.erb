@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Receiver Account No:</strong>
+  <%= @transaction.receiver_id %>
+</p>
+
+<p>
+  <strong>Transaction Amount:</strong>
+  <%= @transaction.transaction_amount %> 
+</p> 
+
+<p>
+  <strong>Balance:</strong>
+  <%= current_user.account.balance %>
+</p>
+
+<%= link_to "Home", root_path %>  

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :transactions, only: [:index, :show, :new, :create]   
   resources :requests
   resources :accounts
   resources :users
