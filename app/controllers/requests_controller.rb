@@ -3,8 +3,9 @@ class RequestsController < ApplicationController
 
   # GET /requests or /requests.json
   def index
-    if current_user.nil?
-      redirect_to login_url
+    if current_user.nil?  
+      redirect_to login_url 
+      return 
     end
     @pending_count = (Request.where(sender_id: current_user.id, status: "pending").or(Request.where(requester_id: current_user.id))).count
   end

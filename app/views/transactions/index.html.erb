@@ -1,0 +1,35 @@
+p id="notice"><%= notice %></p>
+
+<h1>Your Transactions:</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th> 
+      <th>Transaction Amount</th> 
+    </tr>
+  </thead>
+
+  <tbody>
+    <% if current_user %>
+    <% @transactions.each do |transaction| %>
+      <tr>
+        <% if transaction.sender_id == current_user.id %> 
+          <td>Credit</td> 
+        <% else %> 
+          <td>Debit</td> 
+        <% end %> 
+        <td><%= transaction.transaction_amount %></td> 
+        <%= if transaction.sender_id == current_user.id %> 
+          <td><%= link_to 'Show', transaction %></td>
+        <% end %> 
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Transaction', new_transaction_path %>
+
