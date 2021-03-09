@@ -22,6 +22,16 @@ class RequestsController < ApplicationController
   def edit
   end
 
+  def completed
+    @sent_requests = Requst.where(sender_id: current_user.id, status: "completed")
+    @received_requests = Request.where(requester_id: current_user.id, status: "completed")
+  end
+
+  def pending
+    @sent_requests = Requst.where(sender_id: current_user.id, status: "pending")
+    @received_requests = Request.where(requester_id: current_user.id, status: "pending")
+  end
+
   # POST /requests or /requests.json
   def create
     @request = Request.new(request_params)
