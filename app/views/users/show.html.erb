@@ -1,69 +1,48 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron">
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+    <div id="wrapper">
+      <div id="first">
+            <%= image_tag( @user.photo, :size => "260x180", :crop => :fill) %>
+      </div>
+      <div id="second">
+          <%= image_tag( @user.sign, :size => "260x180", :crop => :fill) %>
+      </div>
+      <div id="third">
+        <strong>Username:</strong>
+        <%= @user.username %><br>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+        <strong>Name:</strong>
+        <%= @user.name %>
 
-<p>
-  <strong>Mother name:</strong>
-  <%= @user.mother_name %>
-</p>
+        <strong>Mother name:</strong>
+        <%= @user.mother_name %><br>
 
-<p>
-  <strong>Father name:</strong>
-  <%= @user.father_name %>
-</p>
+        <strong>Father name:</strong>
+        <%= @user.father_name %><br>
 
-<p>
-  <strong>Dob:</strong>
-  <%= @user.dob %>
-</p>
+        <strong>Dob:</strong>
+        <%= @user.dob %><br>
 
-<p>
-  <strong>Aadhar no:</strong>
-  <%= @user.aadhar_no %>
-</p>
+        <strong>Aadhar no:</strong>
+        <%= @user.aadhar_no %><br>
 
-<p>
-  <strong>Pan no:</strong>
-  <%= @user.pan_no %>
-</p>
+        <strong>Pan no:</strong>
+        <%= @user.pan_no %><br>
 
-<p>
-  <strong>Photo:</strong>
-  <%= image_tag( @user.photo, :size => "260x180", :crop => :fill) %>
-</p>
+        <strong>Cos:</strong>
+        <%= @user.cos_id %><br>
 
-<p>
-  <strong>Sign:</strong>
-  <%= image_tag( @user.sign, :size => "260x180", :crop => :fill) %>
-</p>
+        <strong>Phno:</strong>
+        <%= @user.phno %><br>
 
-<p>
-  <strong>Cos:</strong>
-  <%= @user.cos_id %>
-</p>
+        <strong>Adress:</strong>
+        <%= @user.adress %><br>
 
-<p>
-  <strong>Phno:</strong>
-  <%= @user.phno %>
-</p>
-
-<p>
-  <strong>Adress:</strong>
-  <%= @user.adress %>
-</p>
-
-<p>
-  <strong>Nationality:</strong>
-  <%= @user.nationality %>
-</p>
+        <strong>Nationality:</strong>
+        <%= @user.nationality %><br>
+      </div>
+    </div>
+</div>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
