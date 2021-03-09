@@ -1,6 +1,5 @@
-<h1>Editing User</h1>
-
-<%= render 'edit', user: @user %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="jumbotron">
+  <h2>Update Profile</h2>
+  <%= render 'edit', user: @user %>
+  <%= link_to 'Back', users_path, class:"btn btn-secondary" %>
+</div>

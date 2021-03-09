@@ -2,7 +2,7 @@
 
 <h1>Users</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Username</th>
@@ -12,44 +12,27 @@
       <th>Dob</th>
       <th>Aadhar no</th>
       <th>Pan no</th>
-      <th>Photo</th>
-      <th>Sign</th>
-      <th>Cos</th>
-      <th>Phno</th>
+      <th>Phone Number</th>
       <th>Adress</th>
       <th>Nationality</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.username %></td>
-        <td><%= user.name %></td>
-        <td><%= user.mother_name %></td>
-        <td><%= user.father_name %></td>
-        <td><%= user.dob %></td>
-        <td><%= user.aadhar_no %></td>
-        <td><%= user.pan_no %></td>
-        <td><div class="image">
-        <%= image_tag( user.photo, :size => "30x20", :crop => :fill) %>
-        </div></td>
-        <td><div class="image">
-        <%= image_tag( user.sign, :size => "30x20", :crop => :fill) %>
-        </div></td>
-        <td><%= user.cos_id %></td>
-        <td><%= user.phno %></td>
-        <td><%= user.adress %></td>
-        <td><%= user.nationality %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.username %></td>
+      <td><%= user.name %></td>
+      <td><%= user.mother_name %></td>
+      <td><%= user.father_name %></td>
+      <td><%= user.dob %></td>
+      <td><%= user.aadhar_no %></td>
+      <td><%= user.pan_no %></td>
+      <td><%= user.phno %></td>
+      <td><%= user.adress %></td>
+      <td><%= user.nationality %></td>
+    </tr>
+  <% end %>
+</tbody>
 
 <br>
-
-<%= link_to 'New User', new_user_path %>
