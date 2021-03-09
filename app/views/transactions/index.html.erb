@@ -1,11 +1,11 @@
-p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 
 <h1>Your Transactions:</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Type</th> 
+      <th>Transaction Type</th> 
       <th>Transaction Amount</th> 
     </tr>
   </thead>
@@ -20,7 +20,7 @@ p id="notice"><%= notice %></p>
           <td>Debit</td> 
         <% end %> 
         <td><%= transaction.transaction_amount %></td> 
-        <%= if transaction.sender_id == current_user.id %> 
+        <% if transaction.sender_id == current_user.id %> 
           <td><%= link_to 'Show', transaction %></td>
         <% end %> 
       </tr>
