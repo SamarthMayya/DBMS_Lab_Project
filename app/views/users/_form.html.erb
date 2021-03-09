@@ -13,27 +13,20 @@
 
   <div class="field form-group">
     <%= form.label :username %>
-    <%= form.text_field :username, placeholder:"Username" id: :user_username  %>
+    <%= form.text_field :username, id: :user_username, style: 'width: 100%; border-radius:2px; border-shadow:none; border:solid 1px;'  %>
   </div>
 
   <div class="field">
     <%= form.label :password %>
-    <%= form.password_field :password, placeholder:"Password" id: :user_password %>
+    <%= form.password_field :password, id: :user_password,  style: 'width: 100%; border-radius:2px; border-shadow:none; border:solid 1px;' %>
   </div>
 
   <div class="field">
     <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, id: :user_password_confirmation %>
+    <%= form.password_field :password_confirmation, id: :user_password_confirmation,  style: 'width: 100%; border-radius:2px; border-shadow:none; border:solid 1px;' %>
   </div>
-
-  <div class="mb-3">
-    <%= form.label :username %>
-    <%= form.text_field :username, id: :user_username, class:"form-label"%>
-  </div>
-
-
-
+  <br>
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Sign Up', class: 'button', style:  'color:white; width: 100%; border-radius:2px; background-color:#1190DA; padding:5px; border-shadow:none; border:solid 1px blue;'%>
   </div>
 <% end %>

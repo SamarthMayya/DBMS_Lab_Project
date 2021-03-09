@@ -1,0 +1,14 @@
+@import "bootstrap";
+
+.signup-form,.login-form{
+  margin:auto;
+
+  width: 300px;
+  background-color: white;
+  padding: 10px;
+
+  .field{
+    font-family: monospace;
+    font-size: 15px;
+
+  }
