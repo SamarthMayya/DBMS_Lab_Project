@@ -14,8 +14,8 @@ class TransactionsController < ApplicationController
   end 
 
   def create
-    @transaction = Transaction.new(tranaction_params)    
-    if current_user.account.balance >= transaction_params([:transaction_amount]) 
+    @transaction = Transaction.new(transaction_params)    
+    if current_user.account.balance >= transaction_params[:transaction_amount].to_i    
       @transaction.create_transaction 
       if @transaction.save 
         redirect_to @transaction, notice: "Transaction completed successfully" 
