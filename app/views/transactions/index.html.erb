@@ -15,9 +15,9 @@
     <% @transactions.each do |transaction| %>
       <tr>
         <% if transaction.sender_id == current_user.id %> 
-          <td>Credit</td> 
-        <% else %> 
           <td>Debit</td> 
+        <% else %> 
+          <td>Crebit</td> 
         <% end %> 
         <td><%= transaction.transaction_amount %></td> 
         <% if transaction.sender_id == current_user.id %> 
