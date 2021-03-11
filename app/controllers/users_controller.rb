@@ -1,10 +1,18 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  
+  def validate_aadhar 
+    if User.exists?(aadhar_no: params[:aadhar_no]) 
+      render json: {message: 'repeated'}.to_json 
+    else
+      render json: {message: 'unique'}.to_json 
+    end
+  end 
 
   # GET /users or /users.json
   def index
     @users = User.all
-  end
+  end 
 
   # GET /users/1 or /users/1.json
   def show

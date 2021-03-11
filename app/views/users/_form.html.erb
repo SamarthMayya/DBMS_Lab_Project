@@ -43,7 +43,11 @@
     </div>
 
     <div class="field">
-      <%= form.number_field :aadhar_no, id: :user_aadhar_no, placeholder: "Aadhar Card Number", style: 'width: 100%; border-radius:2px; border-shadow:none; border:solid 1px; margin:1.8px;'   %>
+      <%= form.number_field :aadhar_no, class: "form-control", id: :user_aadhar_no, required: true, wrapper: false, placeholder: "Aadhar Card Number", style: 'width: 100%; border-radius:2px; border-shadow:none; border:solid 1px; margin:1.8px;'   %> 
+      <div class="valid-feedback">Looks good!</div> 
+      <div class="invalid-feedback">
+        This Aadhar Number has already been taken, please enter a different Aadhar Number
+      </div> 
     </div>
 
     <div class="field">
@@ -80,3 +84,29 @@
   <% end %>
 
 </div>
+<% # type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" %>
+<script>
+  var url = new URL('<%= validate_aadhar_users_url %>');
+  var field = $("#user_aadhar_no");
+
+  field.change(async function(){
+    // If the field is not filled or has an invalid e-mail address
+    if (!field.is(':valid')) 
+        return;
+
+    params = {aadhar_no: field.val()};
+    url.search = new URLSearchParams(params).toString();
+
+    let response = await fetch(url);
+
+    if (response.ok) {
+      let json = await response.json();
+
+      if (json.message == 'unique')
+        field.removeClass('is-invalid').addClass('is-valid');
+      else
+        field.removeClass('is-valid').addClass('is-invalid');
+    } else
+      alert("HTTP-Error: " + response.status);
+  });
+</script>
