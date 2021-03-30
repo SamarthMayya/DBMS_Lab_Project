@@ -1,12 +1,12 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: %i[ show edit update destroy ]
+  before_action :set_request, only: %i[  edit update destroy ]
 
   # GET /requests or /requests.json
   def index
     if current_user.nil?
       redirect_to login_url
     end
-    @pending_count = (Request.where(sender_id: current_user.id, status: "pending").or(Request.where(requester_id: current_user.id))).count
+    #@pending_count = (Request.where(sender_id: current_user.id, status: "pending").or(Request.where(requester_id: current_user.id))).count
   end
 
   # GET /requests/1 or /requests/1.json
@@ -23,13 +23,16 @@ class RequestsController < ApplicationController
   end
 
   def completed
-    @sent_requests = Requst.where(sender_id: current_user.id, status: "completed")
+    @sent_requests = Request.where(sender_id: current_user.id, status: "completed")
     @received_requests = Request.where(requester_id: current_user.id, status: "completed")
   end
 
   def pending
-    @sent_requests = Requst.where(sender_id: current_user.id, status: "pending")
+    @sent_requests = Request.where(sender_id: current_user.id, status: "pending")
     @received_requests = Request.where(requester_id: current_user.id, status: "pending")
+    respond_to do |format|
+      format.html
+    end
   end
 
   # POST /requests or /requests.json
