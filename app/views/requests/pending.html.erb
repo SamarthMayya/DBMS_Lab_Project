@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+<h1>Completed requests</h1>
+
+<h2>Requested by you</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Sender ph. no</th>
+      <th>Amount</th>
+      <th>Message</th>
+      <th>Requested at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sent_requests.each do |r| %>
+      <tr>
+        <td><%= r.sender_phno %></td>
+        <td><%= r.amount %></td>
+        <td><%= r.message %></td>
+        <td><%= r.created_at %></td>
+        <td><%= link_to 'Show', account %></td>
+        <td><%= link_to 'Edit', edit_account_path(account) %></td>
+        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<h2>Sent by you</h2>
+<table>
+  <thead>
+    <tr>
+      <th>His ph no</th>
+      <th>Amount</th>
+      <th>Message</th>
+      <th>Requested at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sent_requests.each do |r| %>
+      <tr>
+        <td><%= r.requester.phno %></td>
+        <td><%= r.amount %></td>
+        <td><%= r.message %></td>
+        <td><%= r.created_at %></td>
+        <td><%= link_to 'Show', account %></td>
+        <td><%= link_to 'Edit', edit_account_path(account) %></td>
+        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

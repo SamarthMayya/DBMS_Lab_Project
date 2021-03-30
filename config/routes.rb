@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get 'users/new'
   get 'users/create'
   get 'user/edit'
+  get 'request/completed', to: 'requests#completed'
+  get 'request/pending', to: 'requests#pending'
   get 'signup', to: 'users#new'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
