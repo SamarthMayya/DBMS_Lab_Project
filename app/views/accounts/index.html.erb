@@ -2,7 +2,7 @@
 
 <h1>Accounts</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Account</th>
@@ -24,10 +24,10 @@
         <td><%= account.account_type %></td>
         <td><%= account.account_no %></td>
         <td><%= account.balance %></td>
-        <td><%= current_user.name %></td>
+        <td><%= account.user_id %></td>
         <td><%= link_to 'Show', account %></td>
         <td><%= link_to 'Edit', edit_account_path(account) %></td>
-        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= button_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
     <% end %>
@@ -35,5 +35,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Account', new_account_path %>

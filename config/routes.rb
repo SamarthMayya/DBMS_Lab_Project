@@ -1,9 +1,14 @@
 Rails.application.routes.draw do
 
+  resources :transactions, only: [:index, :show, :new, :create]   
   resources :requests
   resources :accounts
-  resources :users
-  root 'requests#index'
+  resources :users do 
+    collection do 
+      get 'validate-aadhar' 
+    end 
+  end 
+  root 'homepage#home'
   # root 'homepage#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
