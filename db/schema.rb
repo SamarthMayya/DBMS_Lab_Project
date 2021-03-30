@@ -10,9 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20210310065410) do
 
-ActiveRecord::Schema.define(version: 20210309161053) do
-  
   create_table "accounts", force: :cascade do |t|
     t.integer "account_id"
     t.integer "cos_id"
