@@ -1,5 +1,6 @@
 class TransactionsController < ApplicationController 
-  before_action :check_login
+  before_action :check_login 
+  before_action :check_account_present, only: %i[ create ]
   before_action :set_transaction, only: %i[ show ] 
 
   def index
@@ -42,4 +43,9 @@ class TransactionsController < ApplicationController
       redirect_to login_url, notice: "You must be logged in to make a transaction" 
     end 
   end 
+  
+  def check_account_present 
+    if current_user.account.present? == false 
+      redirect_to root_path, notice: "You must have an account to make a transaction"
+  end
 end
