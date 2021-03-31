@@ -21,13 +21,16 @@
         <% end %>
         <li class="nav-item">
           <%= link_to "Profile", user_path(current_user.id), class:"nav-link" %>
-        </li> 
-        <li class="nav-item"> 
-          <%= link_to "Your Transactions", transactions_path, class:"nav-link" %> 
-        </li> 
-        <li class="nav-item"> 
-          <%= link_to "New Transaction", new_transaction_path, class:"nav-link" %> 
-        </li> 
+        </li>
+        <li class="nav-item">
+          <%= link_to "Your Transactions", transactions_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "New Transaction", new_transaction_path, class:"nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Requests", requests_path, class:"nav-link" %> 
+        </li>
         <% else %>
         <li class="nav-item">
           <%= link_to "Log In", login_path, class:"nav-link" %>
