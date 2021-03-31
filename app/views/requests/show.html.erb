@@ -30,5 +30,5 @@
   <%= @request.sender_phno %>
 </p>
 
-<%= link_to 'Edit', edit_request_path(@request) %> |
+<%= link_to 'Delete', @request, method: :delete, data: { confirm: 'Are you sure?' } %> |
 <%= link_to 'Back', requests_path %>

@@ -23,8 +23,6 @@
         <td><%= r.created_at %></td>
         <td><%= r.updated_at %></td>
         <td><%= link_to 'Show', account %></td>
-        <td><%= link_to 'Edit', edit_account_path(account) %></td>
-        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -45,16 +43,15 @@
   </thead>
 
   <tbody>
-    <% @sent_requests.each do |r| %>
+    <% @received_requests.each do |r| %>
       <tr>
         <td><%= r.requester.phno %></td>
         <td><%= r.amount %></td>
         <td><%= r.message %></td>
         <td><%= r.created_at %></td>
         <td><%= r.updated_at %></td>
-        <td><%= link_to 'Show', account %></td>
-        <td><%= link_to 'Edit', edit_account_path(account) %></td>
-        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', r %></td>
+
       </tr>
     <% end %>
   </tbody>
