@@ -5,7 +5,14 @@
     <%= csrf_meta_tags %>
 
   </head>
-  
-  <p id="notice"><%= notice %></p><h1>Welcome</h1>
-  <p>Welcome guys</p>
+  <div class="jumbotron" style = "background-color: #99FFFF">
+
+  <p id="notice"><%= notice %></p><h1>Welcome <%= current_user.name%></h1>
+  <p>Welcome to our online Services for free </p><br>
+  <h5> India's most trusted bank </h5>
+
+  <h5> Beware of fraud websites, we have only one website </h5>
+
+  <h5> Do not share your account details to anyone we never call our costomers asking for account details </h5>
+  </div>
 </html>

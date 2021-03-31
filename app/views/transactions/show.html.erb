@@ -1,5 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+
+<div class="jumbotron" style="background-color:#99FF99">
+
 <p>
   <strong>Receiver Account No:</strong>
   <%= @transaction.receiver_id %>
@@ -7,12 +10,15 @@
 
 <p>
   <strong>Transaction Amount:</strong>
-  <%= @transaction.transaction_amount %> 
-</p> 
+  <%= @transaction.transaction_amount %>
+</p>
 
 <p>
   <strong>Balance:</strong>
   <%= current_user.account.balance %>
 </p>
 
-<%= link_to "Home", root_path %>  
+
+</div>
+
+<%= link_to "Home", root_path %>

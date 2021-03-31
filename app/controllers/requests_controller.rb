@@ -1,11 +1,11 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: %i[  edit update destroy ]
+  before_action :set_request, only: %i[ show edit update destroy ]
 
   # GET /requests or /requests.json
   def index
-    if current_user.nil?  
-      redirect_to login_url 
-      return 
+    if current_user.nil?
+      redirect_to login_url
+      return
     end
   end
 

@@ -1,5 +1,5 @@
 <h1>Welcome <%= current_user.name %></h1>
 <br>
-<button><%= link_to "Show pending requests", request_pending_path %> <%=# ": "+ @pending_count.to_s %></button> <br />
-<button><%= link_to "Show completed requests", request_completed_path  %> <%# ": " + @completed_count.to_s %> </button><br />
+<button><%= link_to "Show pending requests", request_pending_path %></button> <br />
+<button><%= link_to "Show completed requests", request_completed_path  %></button><br />
 <%= link_to 'Send money request', new_request_path %>

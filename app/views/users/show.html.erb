@@ -1,16 +1,17 @@
 <div class="jumbotron">
 
     <div id="wrapper">
+      <strong><h1>Hello <%= @user.username %></h1></strong>
+
+
       <div id="first">
             <%= image_tag( @user.photo, :size => "260x180", :crop => :fill) %>
       </div>
       <div id="second">
           <%= image_tag( @user.sign, :size => "260x180", :crop => :fill) %>
       </div>
-      <div id="third">
-        <strong>Username:</strong>
-        <%= @user.username %><br>
 
+      <div id="third">
         <strong>Name:</strong>
         <%= @user.name %><br>
 
