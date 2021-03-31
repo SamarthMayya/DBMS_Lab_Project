@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="jumbotron" style="background-color:#d5ff80">
 
     <div id="wrapper">
       <strong><h1>Hello <%= @user.username %></h1></strong>
@@ -44,6 +44,8 @@
       </div>
     </div>
 </div>
+
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

@@ -7,7 +7,11 @@
   </head>
   <div class="jumbotron" style = "background-color: #99FFFF">
 
+  <% if current_user %>
   <p id="notice"><%= notice %></p><h1>Welcome <%= current_user.name%></h1>
+  <% else %>
+  <p id="notice"><%= notice %></p><h1>Welcome to AS2 Bank</h1>
+  <% end %>
   <p>Welcome to our online Services for free </p><br>
   <h5> India's most trusted bank </h5>
 

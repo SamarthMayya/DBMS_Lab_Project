@@ -2,11 +2,11 @@
 
 <h1>Your Transactions:</h1>
 
-<table>
+<table class= "table">
   <thead>
     <tr>
-      <th>Transaction Type</th> 
-      <th>Transaction Amount</th> 
+      <th>Transaction Type</th>
+      <th>Transaction Amount</th>
     </tr>
   </thead>
 
@@ -14,15 +14,15 @@
     <% if current_user %>
     <% @transactions.each do |transaction| %>
       <tr>
-        <% if transaction.sender_id == current_user.id %> 
-          <td>Debit</td> 
-        <% else %> 
-          <td>Crebit</td> 
-        <% end %> 
-        <td><%= transaction.transaction_amount %></td> 
-        <% if transaction.sender_id == current_user.id %> 
+        <% if transaction.sender_id == current_user.id %>
+          <td>Debit</td>
+        <% else %>
+          <td>Crebit</td>
+        <% end %>
+        <td><%= transaction.transaction_amount %></td>
+        <% if transaction.sender_id == current_user.id %>
           <td><%= link_to 'Show', transaction %></td>
-        <% end %> 
+        <% end %>
       </tr>
     <% end %>
     <% end %>
@@ -32,4 +32,3 @@
 <br>
 
 <%= link_to 'New Transaction', new_transaction_path %>
-

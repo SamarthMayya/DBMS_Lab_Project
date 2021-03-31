@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
-<h1>Completed requests</h1>
+
+<div class="jumbotron" style="background-color:grey, margin:0px, padding:0px">
+
+
+<h1>Pending requests</h1>
+
+
+<div class="jumbotron" style="background-color:#ffb3b3 ">
 
 <h2>Requested by you</h2>
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Sender ph. no</th>
@@ -20,17 +27,20 @@
         <td><%= r.amount %></td>
         <td><%= r.message %></td>
         <td><%= r.created_at %></td>
-        <td><%= link_to 'Show', account %></td>
-        <td><%= link_to 'Edit', edit_account_path(account) %></td>
-        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', r %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
+</div>
+
+
+<div class="jumbotron" style="background-color:#b3d9ff">
+
 
 <h2>Sent by you</h2>
-<table>
+<table class= "table">
   <thead>
     <tr>
       <th>His ph no</th>
@@ -42,16 +52,17 @@
   </thead>
 
   <tbody>
-    <% @sent_requests.each do |r| %>
+    <% @received_requests.each do |r| %>
       <tr>
         <td><%= r.requester.phno %></td>
         <td><%= r.amount %></td>
         <td><%= r.message %></td>
         <td><%= r.created_at %></td>
-        <td><%= link_to 'Show', account %></td>
-        <td><%= link_to 'Edit', edit_account_path(account) %></td>
-        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', r %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+
+</div>
+</div>
