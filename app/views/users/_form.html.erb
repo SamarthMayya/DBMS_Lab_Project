@@ -96,15 +96,21 @@
   field.change(  
   async function(){
     field.removeClass('is-valid').removeClass('is-invalid');
+    field2.addClass('spinner-border');
+    field2.show();
     $('.invalid-feedback').html("Aadhaar number should be of exactly 12 digits.")
 
     // If the field is not filled or has an invalid e-mail address
     if (!field.is(':valid')) {
+      field2.removeClass('spinner-border');
         return;
     }
     
     if(field.val().length != 12) {
-      field.addClass('is-invalid');
+      field2.fadeOut( function (){
+        field2.removeClass('spinner-border');
+        field.addClass('is-invalid');
+      });
       return;
     }
 
@@ -112,18 +118,20 @@
     params = {aadhar_no: field.val()};
     url.search = new URLSearchParams(params).toString();
 
-    field2.addClass('spinner-border');
     let response = await fetch(url);
 
     if (response.ok) {
-      field2.removeClass('spinner-border');
-      let json = await response.json();
+      field2.fadeOut( async function() {
+        field2.removeClass('spinner-loader');
+        let json = await response.json();
 
-      if (json.message == 'unique')
-        field.removeClass('is-invalid').addClass('is-valid');
-      else
-        field.removeClass('is-valid').addClass('is-invalid');
-    } else
+        if (json.message == 'unique')
+          field.removeClass('is-invalid').addClass('is-valid');
+        else
+          field.removeClass('is-valid').addClass('is-invalid');
+      });
+    }
+     else
       alert("HTTP-Error: " + response.status);
   });
 </script>
