@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210310065410) do
+ActiveRecord::Schema.define(version: 20210508060828) do
 
   create_table "accounts", force: :cascade do |t|
     t.integer "account_id"
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 20210310065410) do
     t.string "mother_name"
     t.string "father_name"
     t.date "dob"
-    t.integer "aadhar_no"
+    t.string "aadhar_no"
     t.string "pan_no"
     t.string "photo"
     t.string "sign"
