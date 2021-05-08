@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+
+<div class="jumbotron" style="background-color:#99FF99">
+
+<p>
+  <strong>Receiver Account No:</strong>
+  <%= @transaction.receiver_id %>
+</p>
+
+<p>
+  <strong>Transaction Amount:</strong>
+  <%= @transaction.transaction_amount %>
+</p>
+
+<p>
+  <strong>Balance:</strong>
+  <%= current_user.account.balance %>
+</p>
+
+
+</div>
+
+<%= link_to "Home", root_path %>

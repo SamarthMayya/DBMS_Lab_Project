@@ -1,0 +1,29 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.signup-form,.login-form{
+  margin:auto;
+
+  width: 300px;
+  background-color: white;
+  padding: 10px;
+
+  .field{
+    font-family: monospace;
+    font-size: 15px;
+
+  }
+
+
+  #wrapper {
+      width: 500px;
+      border: 1px solid black;
+  }
+  #first {
+      width: 300px;
+      border: 1px solid red;
+  }
+  #second {
+      border: 1px solid green;
+  } 
+} 

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<div class="jumbotron" style="background-color: #b3cccc">
+
+
+<p>
+  <strong>Requester:</strong>
+  <%= @request.requester_id %>
+</p>
+
+<p>
+  <strong>Sender:</strong>
+  <%= @request.sender_id %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @request.amount %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @request.message %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @request.status %>
+</p>
+
+<p>
+  <strong>Sender phno:</strong>
+  <%= @request.sender_phno %>
+</p>
+
+<%= link_to 'Delete', @request, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', requests_path %>
+
+</div>

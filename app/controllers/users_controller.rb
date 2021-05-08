@@ -1,10 +1,18 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
+  
+  def validate_aadhar 
+    if User.exists?(aadhar_no: params[:aadhar_no]) 
+      render json: {message: 'repeated'}.to_json 
+    else
+      render json: {message: 'unique'}.to_json 
+    end
+  end 
 
   # GET /users or /users.json
   def index
     @users = User.all
-  end
+  end 
 
   # GET /users/1 or /users/1.json
   def show
@@ -25,7 +33,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to edit_user_path(@user), notice: "User was successfully created." }
+        format.html { redirect_to login_path, notice: "User was successfully created." }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +46,9 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: "User was successfully updated." }
+        format.html {
+            redirect_to @user, notice: "User was successfully updated."
+        }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
