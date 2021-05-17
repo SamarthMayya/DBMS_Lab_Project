@@ -17,7 +17,7 @@
         <% if transaction.sender_id == current_user.id %>
           <td>Debit</td>
         <% else %>
-          <td>Crebit</td>
+          <td>Credit</td>
         <% end %>
         <td><%= transaction.transaction_amount %></td>
         <% if transaction.sender_id == current_user.id %>
