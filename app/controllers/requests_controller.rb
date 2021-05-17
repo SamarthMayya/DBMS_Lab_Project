@@ -1,5 +1,5 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: %i[ show edit update destroy ]
+  before_action :set_request, only: %i[ show edit update destroy approve]
 
   # GET /requests or /requests.json
   def index
@@ -35,13 +35,22 @@ class RequestsController < ApplicationController
     end
   end
 
+  def approve
+    @request.status = "completed" 
+    @request.save
+    # params[:sender_id] = @request.requester_id.to_s
+    # params[:receiver_id] = @request.sender_id.to_s
+    # params[:transaction_amount] = @request.amount.to_s
+    redirect_to create_transaction_path(transaction: {sender_id: @request.sender_id.to_s, receiver_id: User.find(@request.requester_id).account.account_no.to_s, transaction_amount: @request.amount.to_s})    
+  end
+
   # POST /requests or /requests.json
   def create
     @request = Request.new(request_params)
     @request.requester_id = current_user.id
-    @request.sender_id = (User.find_by cos_id: request_params[:cos_id]).id
+    @request.sender_id = (User.find_by phno: request_params[:sender_phno]).id
     @request.status = "pending"
-
+    
     respond_to do |format|
       if @request.save
         format.html { redirect_to @request, notice: "Request was successfully created." }

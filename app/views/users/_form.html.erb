@@ -39,7 +39,7 @@
 
     <div class="field">
       <%= form.label :dob %>
-      <%= form.date_select :dob, class: "form-control", id: :user_dob, placeholder: "Date of birth", style: 'width: 100%; border-radius:2px; border-shadow:none; border:solid 1px; margin:1.8px;'   %>
+      <%= form.date_select :dob, start_year: Time.now.year - 100, class: "form-control", id: :user_dob, placeholder: "Date of birth", style: 'width: 100%; border-radius:2px; border-shadow:none; border:solid 1px; margin:1.8px;'   %>
     </div>
 
     <div class="field">

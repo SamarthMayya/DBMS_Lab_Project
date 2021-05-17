@@ -47,5 +47,6 @@ class TransactionsController < ApplicationController
   def check_account_present 
     if current_user.account.present? == false 
       redirect_to root_path, notice: "You must have an account to make a transaction"
+    end
   end
 end

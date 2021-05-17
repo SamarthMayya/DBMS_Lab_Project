@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-  resources :transactions, only: [:index, :show, :new, :create]   
-  resources :requests
+  resources :transactions, only: [:index, :show, :new, :create] 
+  resources :requests do
+    member do
+      post 'approve'
+    end
+  end
   resources :accounts
   resources :users do 
     collection do 
@@ -12,7 +16,7 @@ Rails.application.routes.draw do
   # root 'homepage#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-
+  get 'create', to: 'transactions#create', as: 'create_transaction'
   resources :sessions, only: [:new, :create, :destroy]
   get 'sessions/new'
   get 'sessions/create'
